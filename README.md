@@ -1,2 +1,3 @@
-# Kaffier
-Automated coffee and beer system
+# Kaffee
+# Kaffee
+# Kaffemaschine

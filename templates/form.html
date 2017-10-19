@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>MySenseo</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="container">
+            <div class="title">
+                <h1>My Senseo Remote</h1>
+            </div>
+            <div id="content">
+                <form method="GET" action="">
+                  <input type="submit" value="go" name="go" />
+                </form>
+
+                <form method="GET" action="">
+                  <input type="submit" value="on_off" name="on_off" />
+                </form>
+
+		<form>
+		    Select a time:<input type="time" name="time" />
+		    <input type="submit" value="timer" />
+		</form>		
+            </div>         		
+        </div>
+    </body>
+</html>
