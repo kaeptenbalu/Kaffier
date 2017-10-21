@@ -3,8 +3,8 @@ def write_file(path, value):
         with open(path,'w') as file:
             file.write(value)
     except:
-	print("Fehler")
-	pass
+        print("Fehler")
+        pass
 
 def timer(h,m):
     while True:
@@ -18,18 +18,18 @@ def timer(h,m):
             write_file("/sys/class/gpio/gpio22/value","1")
             time.sleep(2)
             write_file("/sys/class/gpio/gpio22/value","0")
-	    time.sleep(60)
+            time.sleep(60)
 	    #Kaffee rauslassen
-	    write_file('/sys/class/gpio/gpio23/direction','out')
+            write_file('/sys/class/gpio/gpio23/direction','out')
             time.sleep(30)
             write_file('/sys/class/gpio/gpio23/direction','in')
-	    time.sleep(5)
+            time.sleep(5)
 	    #Maschine aus
-	    write_file("/sys/class/gpio/gpio22/direction", "out")
+            write_file("/sys/class/gpio/gpio22/direction", "out")
             write_file("/sys/class/gpio/gpio22/value","1")
             time.sleep(2)
             write_file("/sys/class/gpio/gpio22/value","0")
-	    print 'Timer muede, timer fertig...'
+            print('Timer muede, timer fertig...')
             break
 
 def initialize():
