@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Coffee{% endblock %}
+{% block body %}
+<div id="container">
+    <h1>My Senseo Remote</h1>
+    <div id="content">
+        <form method="GET" action="">
+            <input type="submit" value="go" name="go" />
+        </form>
+
+        <form method="GET" action="">
+            <input type="submit" value="on_off" name="on_off" />
+        </form>
+
+        <form>
+            Select a time:<input type="time" name="time" />
+            <input type="submit" value="timer" />
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -13,7 +13,7 @@ def write_file(path, value):
     try:
         with open(path,'w') as file:
             file.write(value)
-    except: 
+    except:
 	print "Fehler"
 	pass
 
@@ -66,9 +66,9 @@ def do():
     on_off = request.args.get('on_off')
     go = request.args.get('go')
     alarm_time = request.args.get('time')
-    
-    if go is not None:	
-	write_file('/sys/class/gpio/gpio23/direction','out')	
+
+    if go is not None:
+	write_file('/sys/class/gpio/gpio23/direction','out')
 	time.sleep(5)
         write_file('/sys/class/gpio/gpio23/direction','in')
     	return 'Hmmmm chafe.. nom nom'
@@ -88,7 +88,7 @@ def do():
         return 'Timer gesetzt'
 	return render_template('form.html')
 
-	
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=1337)
 
