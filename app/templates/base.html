@@ -2,7 +2,12 @@
 <html lang="en">
 <head>
     <title>{{ title }} | Kaffier</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+		<script src="{{ url_for('bower.static', filename='jquery/dist/jquery.js') }}"></script>
+		<script src="{{ url_for('bower.static', filename='bootstrap/dist/js/bootstrap.js') }}"></script>
+		<script src="{{ url_for('bower.static', filename='moment/moment.js') }}"></script>
+		<script src="{{ url_for('bower.static', filename='eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/timepicker.js') }}"></script>
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
 </head>

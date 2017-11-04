@@ -1,21 +1,31 @@
 {% extends "base.html" %}
 {% block title %}Coffee{% endblock %}
 {% block body %}
-<div id="container">
-    <h1>My Senseo Remote</h1>
+<div class="container">
     <div id="content">
-        <form method="GET" action="">
-            <input type="submit" value="go" name="go" />
-        </form>
-
-        <form method="GET" action="">
-            <input type="submit" value="on_off" name="on_off" />
-        </form>
-
-        <form>
-            Select a time:<input type="time" name="time" />
-            <input type="submit" value="timer" />
-        </form>
+				<h1 class="coffee">My Senseo Remote</h1>
+				<div class="SenseoPanel">
+						<button type="button" class="btn btn-rnd btn-rnd-little btn-rnd-left"></button>
+						<button type="button" class="btn btn-rnd btn-rnd-big btn-rnd-middle"><span class="glyphicon glyphicon-off"></span></button>
+						<button type="button" class="btn btn-rnd btn-rnd-little btn-rnd-right"></span></button>
+				</div>
+				<br />
+				<div class="row">
+						<div class='col-sm-4'></div>
+						<div class='col-sm-4'>
+								<div class="form-group">
+										<div class='input-group date' id='datetimepicker1'>
+												<input type='text' class="form-control" />
+												<span class="input-group-addon">
+														<span class="glyphicon glyphicon-calendar"></span>
+												</span>
+										</div>
+								</div>
+						</div>
+						<div class='col-sm-4'>
+							<button type="button" class="btn btn-primary">Go</button>
+						</div>
+				</div>
     </div>
 </div>
 {% endblock %}
