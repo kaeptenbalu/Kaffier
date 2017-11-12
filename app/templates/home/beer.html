@@ -1,4 +1,51 @@
 {% extends "base.html" %}
 {% block title %}Coffee{% endblock %}
 {% block body %}
+<div class="container">
+    <div id="content">
+        <h1 class="beer">Beers</h1>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Quantity</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for beer in beers %}
+							<tr>
+								<td>{{ beer.id }}</td>
+								<td>{{ beer.NAME }}</td>
+								<td>{{ beer.Anzahl }}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+        <h1 class="beer">My shopping list</h1>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Product</th>
+							<th>Available</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for product in products %}
+							<tr>
+								<td>{{ product.ID }}</td>
+								<td>{{ product.Produkt }}</td>
+								{% if product.Vorhanden == 1 %}
+									<td><i class="fa fa-check" aria-hidden="true"></i></td>
+								{% else %}
+									<td><i class="fa fa-times" aria-hidden="true"></i></td>
+								{% endif %}
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+    </div>
+</div>
+
 {% endblock %}
