@@ -1,3 +1,5 @@
+import os
+
 class Config(object):
     """
     Common configurations
@@ -13,7 +15,8 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_ECHO = True
     SECRET_KEY = 'dev_key'
     SQLALCHEMY_TRACK_MODIFICATION = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///DevData.db'
+    db_path = os.path.join(os.path.dirname(__file__), 'DevData.db')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format(db_path)
 
 
 class ProductionConfig(Config):
@@ -23,7 +26,8 @@ class ProductionConfig(Config):
 
     DEBUG = False
     SECRET_KEY = 'prod_key_change_this'
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///Data.db'
+    db_path = os.path.join(os.path.dirname(__file__), 'Data.db')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format(db_path)
     SQLALCHEMY_TRACK_MODIFICATION = False
 
 

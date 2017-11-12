@@ -2,6 +2,7 @@ from flask import render_template, request
 
 from . import home
 from ..helpers import coffee
+from ..models import Product, Beer
 
 @home.route('/')
 def homepage():
@@ -16,7 +17,9 @@ def beerpage():
     """
     Render the dashboard template on the /beer route
     """
-    return render_template('home/beer.html', title="Beer")
+    products = Product.query.all()
+    beers = Beer.query.all()
+    return render_template('home/beer.html', title="Beer", products=products, beers=beers)
 
 
 @home.route('/coffee')
