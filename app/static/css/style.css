@@ -118,6 +118,10 @@ p.copyright {
     border-radius: 50% 50% 0 0/ 100% 100% 0px 0px;
 }
 
+#coffee-form-1 {
+  padding-top: 5%;
+}
+
 .btn-rnd {
 		position:relative;
 		top: 25%;
@@ -170,4 +174,14 @@ p.copyright {
 .btn-rnd:active:after{
 	color:#dbd2d2;
 	text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
+}
+
+.device-on {
+  border-color: green;
+  border-width: 3px;
+}
+
+.device-off {
+  border-color: red;
+  border-width: 3px;
 }

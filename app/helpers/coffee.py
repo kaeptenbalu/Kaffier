@@ -1,10 +1,30 @@
+import time
+from flask import current_app
+
+PINS = ["22", "23"]
+
 def write_file(path, value):
     try:
         with open(path,'w') as file:
             file.write(value)
+        return True
     except:
-        print("Fehler")
-        pass
+        current_app.logger.error("Could not write in file: %s", path)
+        return False
+
+def set_direction(pin, direction):
+    if pin not in PINS:
+        return False
+    path = "/sys/class/gpio/gpio{}/direction".format(pin)
+    if write_file(path, direction):
+        return True
+
+def set_value(pin, value):
+    if pin not in PINS:
+        return False
+    path = "/sys/class/gpio/gpio{}/value".format(pin)
+    if write_file(path, value):
+        return True
 
 def timer(h,m):
     while True:
@@ -33,5 +53,20 @@ def timer(h,m):
             break
 
 def initialize():
-    write_file('/sys/class/gpio/export','23')
-    write_file('/sys/class/gpio/export','22')
+    errors = 0
+    for pin in PINS:
+        if not write_file('/sys/class/gpio/export', pin):
+            errors += 1
+    if errors > 0:
+        return False
+    return True
+
+def on_off():
+    if not set_direction("22", "out"):
+        return False
+    if not set_value("22", "1"):
+        return False
+    time.sleep(5)
+    if not set_value("22", "0"):
+        return False
+    return True
