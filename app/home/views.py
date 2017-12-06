@@ -6,7 +6,7 @@ from ..models import Product, Beer, Senseo
 from app import db
 
 @home.route('/')
-def homepage():
+def shopping():
     """
     Render the homepage template on the / route
     """

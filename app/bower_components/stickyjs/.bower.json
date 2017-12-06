@@ -1,0 +1,26 @@
+{
+  "name": "stickyjs",
+  "authors": [
+    "Sebastian Dawidziak <sebastian.dawidziak@profitroom.pl>"
+  ],
+  "main": "stickyjs.min.js",
+  "license": "MIT",
+  "homepage": "https://github.com/dawidziak/stickyjs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "93f682f415",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "93f682f415440d03eed56ecdd58bbb4d81001509"
+  },
+  "_source": "https://github.com/dawidziak/stickyjs.git",
+  "_target": "*",
+  "_originalSource": "stickyjs",
+  "_direct": true
+}
