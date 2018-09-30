@@ -21,3 +21,10 @@ class Beer(db.Model):
 
     def __repr__(self):
         return '<Beer: {}>'.format(self.name)
+
+class Senseo(db.Model):
+    __tablename__ = "Kaffeemaschine"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    status = db.Column(db.Boolean)
